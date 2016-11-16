@@ -1,14 +1,19 @@
 require "artemis/bot/response"
+require "artemis/bot/message_request"
 require "artemis/bot/connection"
 require "artemis/bot/errors"
+require "artemis/services/object_to_hash"
 
 module Artemis
   module Bot
     class Conversator
       include Artemis::Bot::Connection
 
-      def self.message(workspace_id, params = {})
-        response = post("/v1/workspaces/#{workspace_id}/message?version=2016-09-20", body: params.to_json)
+      def self.message(workspace_id, message_request = Artemis::Bot::MessageRequest.new)
+        message_request_hash = Artemis::Services::ObjectToHash.convert(message_request, {include_nils: false})
+
+        response = post("/v1/workspaces/#{workspace_id}/message?version=2016-09-20",
+                        body: message_request_hash.to_json)
 
         parsed_response  = JSON.parse(response.body)
 

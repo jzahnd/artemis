@@ -1,4 +1,6 @@
 require "artemis/bot/version"
+require "artemis/bot/message_request"
+require "artemis/bot/input"
 require "active_support/dependencies"
 require "httmultiparty"
 
