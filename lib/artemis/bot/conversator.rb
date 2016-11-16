@@ -1,3 +1,4 @@
+require "artemis/bot/response"
 require "artemis/bot/connection"
 require "artemis/bot/errors"
 
@@ -11,7 +12,7 @@ module Artemis
 
         parsed_response  = JSON.parse(response.body)
 
-        return parsed_response if response.success?
+        return Artemis::Bot::Response.new(parsed_response) if response.success?
 
         raise_exception(response.code, response.body)
       end
