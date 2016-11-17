@@ -1,3 +1,5 @@
+<a href="https://codeclimate.com/repos/582ddb758ec2e6008000009a/feed"><img src="https://codeclimate.com/repos/582ddb758ec2e6008000009a/badges/5b338f461679b2e41308/gpa.svg" /></a>
+
 # Artemis
 
 Artemis is a wrapper for the [Watson Conversation Service](http://www.ibm.com/watson/developercloud/doc/conversation/)
