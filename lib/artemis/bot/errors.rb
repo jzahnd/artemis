@@ -10,9 +10,9 @@ module Artemis
     end
 
     # Any error with a 5xx HTTP status code
-    class ServerError < Error ; end
+    class ServerError < Error; end
 
     # Any error with a 4xx HTTP status code
-    class ClientError < Error ; end
+    class ClientError < Error; end
   end
 end

@@ -1,18 +1,17 @@
 module Artemis
   module Services
     module ObjectToHash
-
-      def self.convert(object, opts = {include_nils: true})
+      def self.convert(object, opts = { include_nils: true })
         hash = {}
         object.instance_variables.each do |var|
           var_value = object.instance_variable_get(var)
 
-          next if !opts["include_nils"] && var_value.nil?
+          next if !opts['include_nils'] && var_value.nil?
 
-          hash[var.to_s.delete("@")] = if descendant?(var_value, Artemis::Bot)
-                                         self.convert(var_value)
+          hash[var.to_s.delete('@')] = if descendant?(var_value, Artemis::Bot)
+                                         convert(var_value)
                                        else
-                                         hash[var.to_s.delete("@")] = var_value
+                                         hash[var.to_s.delete('@')] = var_value
                                        end
         end
 
@@ -21,9 +20,8 @@ module Artemis
 
       def self.descendant?(value, parent)
         parent = parent.class unless parent.is_a?(Class) || parent.is_a?(Module)
-        value.class.to_s.index("#{parent}::") == 0
+        value.class.to_s.index("#{parent}::").zero?
       end
-
     end
   end
 end

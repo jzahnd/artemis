@@ -4,7 +4,7 @@ module Artemis
       attr_accessor :text
 
       def initialize(attrs = {})
-        @text = attrs["text"]
+        @text = attrs['text']
       end
     end
   end

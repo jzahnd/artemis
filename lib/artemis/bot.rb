@@ -1,12 +1,12 @@
-require "artemis/bot/version"
-require "artemis/bot/message_request"
-require "artemis/bot/input"
-require "active_support/dependencies"
-require "httmultiparty"
+require 'artemis/bot/version'
+require 'artemis/bot/message_request'
+require 'artemis/bot/input'
+require 'active_support/dependencies'
+require 'httmultiparty'
 
 module Artemis
   module Bot
-    autoload :Conversator, "artemis/bot/conversator"
+    autoload :Conversator, 'artemis/bot/conversator'
 
     # Username for authentication
     mattr_accessor :username

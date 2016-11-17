@@ -4,8 +4,8 @@ module Artemis
       attr_reader :text, :nodes_visited
 
       def initialize(attrs = {})
-        @text = attrs["text"]
-        @nodes_visited = attrs["nodes_visited"]
+        @text = attrs['text']
+        @nodes_visited = attrs['nodes_visited']
       end
     end
   end
