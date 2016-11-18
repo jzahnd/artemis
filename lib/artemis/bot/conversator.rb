@@ -6,7 +6,7 @@ require 'artemis/services/object_to_hash'
 
 module Artemis
   module Bot
-    class Conversator
+    class Conversator < Olimpo::Base
       include Artemis::Bot::Connection
 
       def self.message(workspace_id, message_request = Artemis::Bot::MessageRequest.new)
