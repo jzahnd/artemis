@@ -20,7 +20,7 @@ module Artemis
 
       def self.descendant?(value, parent)
         parent = parent.class unless parent.is_a?(Class) || parent.is_a?(Module)
-        value.class.to_s.index("#{parent}::").zero?
+        value.class.to_s.index("#{parent}::").present?
       end
     end
   end
