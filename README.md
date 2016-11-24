@@ -26,6 +26,7 @@ First you need to configure Artemis with your Conversation credentials
   Artemis::Bot.configure do |config|
     config.username = "your-username-here"
     config.password = "your-password-here"
+    config.base_uri = "https://gateway.watsonplatform.net/conversation/api"
   end
 ```
 

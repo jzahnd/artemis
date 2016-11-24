@@ -1,13 +1,11 @@
 require 'artemis/bot/response'
 require 'artemis/bot/message_request'
-require 'artemis/bot/connection'
-require 'artemis/bot/errors'
 require 'artemis/services/object_to_hash'
 
 module Artemis
   module Bot
     class Conversator < Olimpo::Base
-      include Artemis::Bot::Connection
+      headers 'Content-Type' => 'application/json'
 
       def self.message(workspace_id, message_request = Artemis::Bot::MessageRequest.new)
         message_request_hash = Artemis::Services::ObjectToHash.convert(message_request, include_nils: false)
