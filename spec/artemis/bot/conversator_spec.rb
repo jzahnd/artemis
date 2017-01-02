@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Artemis::Bot::Conversator do
 
-  it 'parses #message response' do
+  it 'parses #classify_by_url response' do
     allow(Artemis::Bot::Conversator).to receive(:post).and_return(ExampleResponse.new)
 
     workspace_id =  "example-workspace-id"
@@ -20,13 +20,13 @@ describe Artemis::Bot::Conversator do
 
     #Context
     context = response.context
-    expect(context).to be_a_kind_of(Artemis::Bot::Context)
-    expect(context.conversation_id).to eq("f1ab5f76-f41b-47b4-a8dc-e1c32b925b79")
-    expect(context.system).to be_a_kind_of(Artemis::Bot::Context::System)
-    expect(context.system.dialog_stack).to eq([{"dialog_node" => "root"}])
-    expect(context.system.dialog_turn_counter).to eq(2)
-    expect(context.system.dialog_request_counter).to eq(2)
-    expect(context.default_counter).to eq(0)
+    expect(context).to be_a_kind_of(Hash)
+    expect(context["conversation_id"]).to eq("f1ab5f76-f41b-47b4-a8dc-e1c32b925b79")
+    expect(context["system"]).to be_a_kind_of(Hash)
+    expect(context["system"]["dialog_stack"]).to eq([{"dialog_node" => "root"}])
+    expect(context["system"]["dialog_turn_counter"]).to eq(2)
+    expect(context["system"]["dialog_request_counter"]).to eq(2)
+    expect(context["defaultCounter"]).to eq(0)
 
     #Entities
     entity = response.entities[0]

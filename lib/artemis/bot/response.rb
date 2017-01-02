@@ -11,7 +11,7 @@ module Artemis
 
       def initialize(attrs = {})
         @input = Artemis::Bot::Input.new(attrs['input'])
-        @context = Artemis::Bot::Context.new(attrs['context'])
+        @context = attrs['context']
         @entities = attrs['entities'].map { |entity| Artemis::Bot::Entity.new(entity) }
         @intents = attrs['intents'].map { |intent| Artemis::Bot::Intent.new(intent) }
         @output = Artemis::Bot::Output.new(attrs['output'])
