@@ -1,4 +1,6 @@
+[![Build Status](https://travis-ci.org/IcaliaLabs/artemis.svg?branch=master)](https://travis-ci.org/IcaliaLabs/artemis)
 <a href="https://codeclimate.com/repos/582ddb758ec2e6008000009a/feed"><img src="https://codeclimate.com/repos/582ddb758ec2e6008000009a/badges/5b338f461679b2e41308/gpa.svg" /></a>
+
 ![Made with Love by Icalia Labs](https://img.shields.io/badge/With%20love%20by-Icalia%20Labs-ff3434.svg)
 
 
