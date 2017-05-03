@@ -28,7 +28,7 @@ To install the gem manually from your shell, run:
 
 First you need to configure Artemis with your Conversation credentials
 
-```
+```ruby
   Artemis::Bot.configure do |config|
     config.username = "your-username-here"
     config.password = "your-password-here"
@@ -40,7 +40,7 @@ First you need to configure Artemis with your Conversation credentials
 
 To send a message:
 
-```
+```ruby
 workspace_id =  "your-workspace_id-here"
 
 message_request = Artemis::Bot::MessageRequest.new
@@ -52,7 +52,7 @@ response = Artemis::Bot::Conversator.message(workspace_id, message_request)
 
 To follow up a conversation:
 
-```
+```ruby
 # assign the context from the previous response
 message_request.context = response.context
 message_request.input.text = "How you doing?"
