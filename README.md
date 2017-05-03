@@ -4,8 +4,6 @@
   <img src="assets/logo.png" width="980">
 </div>
 
-# Artemis
-
 Artemis is a wrapper for the [Watson Conversation Service](http://www.ibm.com/watson/developercloud/doc/conversation/)
 
 ## Installation
