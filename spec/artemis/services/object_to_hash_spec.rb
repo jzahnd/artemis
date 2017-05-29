@@ -38,7 +38,7 @@ describe Artemis::Services::ObjectToHash do
         input_var = @message.instance_variables.first
         var_value = @message.instance_variable_get(input_var)
 
-        expect(var_value.text).to eql("Hey")
+        expect(var_value).to be_a_kind_of(Artemis::Bot::Input)
         expect(Artemis::Services::ObjectToHash.descendant?(var_value, Artemis::Bot)).to be_truthy
       end
     end
@@ -58,7 +58,7 @@ describe Artemis::Services::ObjectToHash do
         alternate_intents_var = @message.instance_variables[1]
         var_value = @message.instance_variable_get(alternate_intents_var)
 
-        expect(var_value).to eql(true)
+        expect(var_value).to be_a_kind_of(TrueClass)
         expect(Artemis::Services::ObjectToHash.descendant?(var_value, Artemis::Bot)).to be_falsey
       end
     end
