@@ -10,5 +10,6 @@ module Artemis
   module Bot
     extend Olimpo
     autoload(:Conversator, 'artemis/bot/conversator')
+    autoload(:Workspace, 'artemis/bot/workspace')
   end
 end

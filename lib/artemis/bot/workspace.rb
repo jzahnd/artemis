@@ -1,3 +1,7 @@
+require "artemis/bot/workspace/workspace_example"
+require "artemis/bot/workspace/workspace_collection"
+require "artemis/bot/workspace/workspace_export"
+
 module Artemis
   module Bot
     class Workspace < Olimpo::Base
