@@ -1,3 +1,4 @@
+require 'artemis/bot/errors'
 require 'artemis/bot/response'
 require 'artemis/bot/message_request'
 require 'artemis/services/object_to_hash'
