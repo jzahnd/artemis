@@ -11,7 +11,7 @@ module Artemis
       def self.message(workspace_id, message_request = Artemis::Bot::MessageRequest.new)
         message_request_hash = Artemis::Services::ObjectToHash.convert(message_request, include_nils: false)
 
-        response = post("/v1/workspaces/#{workspace_id}/message?version=2016-09-20",
+        response = post("/v1/workspaces/#{workspace_id}/message?version=2017-05-26",
                         body: message_request_hash.to_json)
 
         parsed_response = JSON.parse(response.body)
