@@ -7,8 +7,7 @@ module Artemis
     class WorkspaceManager < Olimpo::Base
       headers 'Content-Type' => 'application/json'
 
-      def self.workspaces(workspace_request = Artemis::Bot::WorkspaceRequest.new)
-        workspace_request_hash = Artemis::Services::ObjectToHash.convert(workspace_request, include_nils: false)
+      def self.workspaces
         response = get("/v1/workspaces?version=2017-05-26&include_count=true")
 
         parsed_response = JSON.parse(response.body)
