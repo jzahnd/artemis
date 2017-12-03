@@ -12,5 +12,6 @@ module Artemis
     extend Olimpo
     autoload(:Conversator, 'artemis/bot/conversator')
     autoload(:WorkspaceManager, 'artemis/bot/workspace_manager')
+    autoload(:IntentsManager, 'artemis/bot/intents_manager')
   end
 end

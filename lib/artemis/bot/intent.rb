@@ -5,7 +5,7 @@ module Artemis
 
       def initialize(attrs = {})
         @intent = attrs['intent']
-        @confidence = attrs['confidence']
+        @confidence = attrs['confidence'] if attrs.key?('confidence')
       end
     end
   end
